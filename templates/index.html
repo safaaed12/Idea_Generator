@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ENSEM</title>
+
+    <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/ensem.png') }}">
+
+    <style>
+      /*  CSS styles */
+      h1 {
+    color: #61085b;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  p {
+    color: #070707;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+   
+  }
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+
+      .mt-5 {
+        margin-top: 3rem !important;
+      }
+
+     
+
+      .btn-primary{
+    background-color: #61085b;
+    border-color: #61085b;
+  }
+.form-label{
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.btn-primary:hover{
+  background-color: #de16d1;
+    border-color: #de16d1;
+}
+  
+
+      
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">ENSEM Online Ideas Generator</h1>
+
+      <p>
+        The ENSEM Online Ideas Generator is an e-learning tool designed to help you generate ideas with ease. This interactive platform enables you to explore a wide range of topics and discover valuable insights. Whether you're a student, professional, or lifelong learner, this e-learning resource provides an engaging and convenient way to spark creativity, expand your knowledge, and even enhance your school presentations.</p><hr>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <form class="" action="/" method="post">
+            <div class="mb-3">
+              <label for="topic" class="form-label">What topic do you want to get ideas on?</label>
+              <input type="text" class="form-control" id="topic" name="topic" placeholder="Enter the topic">
+            </div>
+            <input type="hidden" name="form1" value="form1">
+
+            <button type="submit" id="topicButton" class="btn btn-primary">Generate Ideas</button>
+          </form>
+        </div>
+
+
+
+        <div class="col-lg-6">
+          1. {{topicIdeas|safe}}
+        </div>
+      </div>
+
+
+      <br>
+      <hr>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <form class="" action="/" method="post">
+            <div class="mb-3">
+              <label for="section" class="form-label">Enter the Topic Below that you have selected to write about :</label>
+              <input type="text" class="form-control" id="section" name="section" placeholder="Enter the topic's title to generate sections ">
+            </div>
+            <input type="hidden" name="form2" value="form2">
+
+            <button type="submit" id="parag2" class="btn btn-primary">Generate Sections</button>
+          </form>
+        </div>
+
+
+
+        <div class="col-lg-6">
+          {{sectionIdeas|safe}}
+        </div>
+      </div>
+
+      <br>
+      <hr>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <form class="" action="/" method="post">
+            <div class="mb-3">
+              <label for="expander" class="form-label">Enter the section title you want to expand :</label>
+              <input type="text" class="form-control" id="expander" name="expander" placeholder="Enter the section title">
+            </div>
+            <input type="hidden" name="form3" value="form3">
+
+            <button type="submit" class="btn btn-primary">Expand on the title</button>
+          </form>
+        </div>
+
+
+
+        <div class="col-lg-6">
+          {{expanded|safe}}
+        </div>
+      </div>
+
+
+    </div>
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>
